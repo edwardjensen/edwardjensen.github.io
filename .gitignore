@@ -12,3 +12,6 @@ package-lock.json
 .jekyll-cache/
 .jekyll-metadata
 _site/
+
+# Development data
+_data/ejnet.json
