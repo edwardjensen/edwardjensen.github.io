@@ -2,3 +2,8 @@
 ---
 
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'basic-sans', 'sans-serif';
+  --font-header: 'museo-slab', 'serif';
+  }

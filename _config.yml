@@ -18,3 +18,4 @@ postcss:
   script: node_modules/.bin/postcss
   config: postcss.config.mjs
 
+disclaimer: "The content and opinions expressed herein, while well-reasoned and insightful, are my own personal opinions and are not the views of my employer or others with whom I am affiliated."
