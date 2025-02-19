@@ -1,0 +1,20 @@
+url: "https://edwardjensen.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "Edward Jensen says hello" # the name of your site, e.g. ACME Corp.
+
+plugins:
+  - jekyll-postcss-v2
+
+ignore:
+  - package-lock.json
+  - package.json
+  - postcss.config.mjs
+
+collections:
+  homepage:
+    output: false
+
+postcss:
+  script: node_modules/.bin/postcss
+  config: postcss.config.mjs
+
