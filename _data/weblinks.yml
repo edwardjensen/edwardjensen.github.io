@@ -4,9 +4,6 @@
 - name: LinkedIn
   url: https://www.linkedin.com/in/edwardjensen
   icon: linkedin
-- name: Bluesky
-  url: https://bsky.app/profile/edwardjensen.net
-  icon: mastodon
 - name: Mastodon
   url: https://mastodon.social/@edwardjensen
   icon: mastodon

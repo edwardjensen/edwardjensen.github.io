@@ -1,6 +1,7 @@
 ---
 section: hero
 order: 1
+status: live
 ---
 
-<span class="text-4xl">Greetings and welcome to my landing page.</span>
+<h3 class="text-4xl">Greetings and welcome to my landing page.</h3>

@@ -1,6 +1,7 @@
 ---
 order: 3
 section_title: "Recent writing"
+status: live
 ---
 
 {% assign recent_posts = site.data.ejnet.items | slice: 0, 3  %}
