@@ -22,7 +22,7 @@ status: live
 
 {% assign recent_posts = site.data.ejnet.items | slice: 4, 10 %}
 <h3 class="text-xl italic">Also recently...</h3>
-<ul>
+<ul class="leading-5">
 {% for post in recent_posts %}
 <li><a href="{{ post.url }}" class="font-bold uppercase text-blue-600 hover:text-blue-500">{{ post.title }}</a>
 <span>{{ post.date_published | date: "%e %B %Y" }}</span>
