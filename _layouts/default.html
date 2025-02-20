@@ -21,7 +21,7 @@
     {% endif %}
 
     {% for i in homepage %}
-    <div class="flex items-center justify-center w-11/12 lg:max-w-2xl mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl {% if i.order != 1 %} bg-gray-50 border-solid border-2 {% endif %}">
+    <div class="flex items-center justify-center w-11/12 lg:max-w-2xl mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl {% if i.boxed != false %} bg-gray-50 border-solid border-2 {% endif %}">
       <div class="m-2 text-center">
         <span class="text-3xl">{{ i.section_title }}</span>
           {{ i.content }}

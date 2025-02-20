@@ -1,7 +1,8 @@
 ---
 section: hero
-order: 1
+order: 2
 status: live
+boxed: false
 ---
 
-<h3 class="text-4xl">Greetings and welcome to my landing page.</h3>
+<h3 class="text-4xl font-semibold">Edward Jensen is a leader at the intersection of information technology and nonprofit organizations.</h3>
