@@ -14,7 +14,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <body class="bg-gray-300">
-    {% if environment == "production" %}
+    {% if jekyll.environment == "production" %}
     {% assign homepage = site.homepage | where: "status", "live" | sort: 'order' %}
     {% else %}
     {% assign homepage = site.homepage | sort: 'order' %}
