@@ -768,8 +768,8 @@
   .py-2\.5 {
     padding-block: calc(var(--spacing) * 2.5);
   }
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
   }
   .text-center {
     text-align: center;
@@ -894,6 +894,10 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function)) !important;
     transition-duration: var(--tw-duration, var(--default-transition-duration)) !important;
   }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
   .\[link\:doc\/command_line_usage\.rdoc\] {
     link: doc/command line usage.rdoc;
   }
@@ -966,6 +970,14 @@
     &:hover {
       @media (hover: hover) {
         text-decoration-line: underline;
+      }
+    }
+  }
+  .hover\:blur-\[1px\] {
+    &:hover {
+      @media (hover: hover) {
+        --tw-blur: blur(1px);
+        filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
       }
     }
   }
@@ -1210,6 +1222,10 @@
   inherits: false;
 }
 @property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-duration {
   syntax: "*";
   inherits: false;
 }
