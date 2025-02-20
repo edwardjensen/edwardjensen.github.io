@@ -5,4 +5,4 @@ status: live
 boxed: false
 ---
 
-<h3 class="text-4xl font-semibold">Edward Jensen is a leader at the intersection of information technology and nonprofit organizations.</h3>
+<h3 class="text-4xl font-semibold">{{ site.description }}</h3>

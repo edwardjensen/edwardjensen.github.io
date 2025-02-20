@@ -1,6 +1,7 @@
 url: "https://edwardjensen.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "Edward Jensen says hello" # the name of your site, e.g. ACME Corp.
+description: "Edward Jensen is a leader at the intersection of information technology and nonprofit organizations."
 
 plugins:
   - jekyll-postcss-v2
@@ -21,3 +22,9 @@ postcss:
   config: postcss.config.mjs
 
 disclaimer: "The content and opinions expressed herein, while well-reasoned and insightful, are my own personal opinions and are not the views of my employer or others with whom I am affiliated."
+
+social:
+  name: Edward Jensen
+  links:
+    - https://www.linkedin.com/in/edwardjensen/
+    - https://github.com/edwardjensen
