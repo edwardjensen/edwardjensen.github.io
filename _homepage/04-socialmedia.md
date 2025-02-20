@@ -5,7 +5,7 @@ status: live
 ---
 
 <div class="flex justify-center">
-    <ul class="flex items-center justify-center space-x-4 text-5xl my-1">
+    <ul class="flex items-center justify-center space-x-8 text-5xl my-2">
         {% for i in site.data.weblinks %}
         <li>
             <a href="{{ i.url }}">

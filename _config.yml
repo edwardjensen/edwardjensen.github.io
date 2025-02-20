@@ -5,10 +5,11 @@ title: "Edward Jensen says hello" # the name of your site, e.g. ACME Corp.
 plugins:
   - jekyll-postcss-v2
 
-ignore:
+exclude:
   - package-lock.json
   - package.json
   - postcss.config.mjs
+  - '*.code-workspace'
 
 collections:
   homepage:
