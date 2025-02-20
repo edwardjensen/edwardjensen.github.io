@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 20
 section_title: "Me, elsewhere online"
 status: live
 ---
@@ -9,7 +9,7 @@ status: live
         {% for i in site.data.weblinks %}
         <li>
             <a href="{{ i.url }}">
-                <i class="bi bi-{{ i.icon }}"></i>
+                <i class="bi bi-{{ i.icon }} text-blue-600 hover:text-blue-500"></i>
             </a>
         </li>
         {% endfor %}

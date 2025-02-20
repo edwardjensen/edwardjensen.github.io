@@ -1,0 +1,15 @@
+---
+order: 11
+section_title: "Recent GitHub contributions"
+status: draft
+---
+
+{% assign github = site.data.github | sort: 'updated_at' | reverse %}
+<ul class="space-y-3 mt-3 mb-3">
+{% for repo in github limit: 5 %}
+    <li class="leading-4"><a href="{{ repo.html_url }}" target="_blank" class="font-semibold hover:underline text-blue-600 hover:text-blue-500">{{ repo.name }}</a>
+    <span>{{ repo.description }}</span>
+    <span class="italic">(last updated {{ repo.updated_at | date: '%e %B %Y' }})</span>
+</li>
+{% endfor %}
+</ul>

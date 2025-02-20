@@ -14,3 +14,4 @@ _site/
 
 # Development data
 _data/ejnet.json
+_data/github.json

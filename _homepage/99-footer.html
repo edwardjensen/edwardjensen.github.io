@@ -7,7 +7,7 @@ status: live
     <div class="font-semibold">Copyright &copy; 2008-{{ "now" | date: "%Y" }} Edward Jensen. All rights reserved.</div>
     <div><span class="uppercase">Disclaimer</span>: {{ site.disclaimer }}</div>
     {% if jekyll.environment == "production" %}
-        <div>This site is powered by Jekyll {{ jekyll.version }} and was last updated {{ site.time | date: "%d %B %Y" }} from commit <a href="https://github.com/edwardjensen/edwardjensen.github.io/commit/{{ site.data.buildinfo.commit }}" target="_blank">{{ site.data.buildinfo.commit | slice: 0, 7 }}</a> as a {{ site.data.buildinfo.build_type }} build.</div>
+        <div>This site is powered by Jekyll {{ jekyll.version }} and was last updated {{ site.time | date: "%d %B %Y" }} from commit <a href="https://github.com/edwardjensen/edwardjensen.github.io/commit/{{ site.data.buildinfo.commit }}" class="text-blue-600 hover:underline" target="_blank">{{ site.data.buildinfo.commit | slice: 0, 7 }}</a> as a {{ site.data.buildinfo.build_type }} build.</div>
     {% else %}
         <div>This site is powered by Jekyll {{ jekyll.version }} and was last updated {{ site.time | date: "%d %B %Y" }}.</div>
         <div class="uppercase">local development edition</div>
