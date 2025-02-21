@@ -1,2 +1,4 @@
-- source: /nfc
-  destination: /?utm_source=nfc&utm_medium=nfc&utm_campaign=nfcscan
+- shorturl: /nfc
+  source: nfc
+  medium: nfcscan
+  campaign: f2f 

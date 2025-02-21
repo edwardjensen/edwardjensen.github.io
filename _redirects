@@ -1,4 +1,6 @@
 ---
 layout: none
 ---
-{% for item in site.data.redirects %}{{ item.source }} {{ item.destination }} 302{% endfor %}
+{% for item in site.data.redirects %}
+{{ item.shorturl }} /?utm_source={{ item.source }}&utm_medium={{ item.medium }}&utm_campaign={{ item.campaign }} 302
+{% endfor %}
