@@ -1,4 +1,4 @@
 ---
 layout: none
 ---
-{% for item in site.data.redirects %}{{ item.source }} {{ item.destination }} {{ item.type }}{% endfor %}
+{% for item in site.data.redirects %}{{ item.source }} {{ item.destination }} 302{% endfor %}
