@@ -1,0 +1,3 @@
+- source: /nfc
+  destination: /?utm_source=nfc&utm_medium=nfc&utm_campaign=nfc
+  type: 302

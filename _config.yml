@@ -7,6 +7,9 @@ plugins:
   - jekyll-postcss-v2
   - jekyll-seo-tag
 
+include:
+  - _redirects
+
 exclude:
   - package-lock.json
   - package.json

@@ -1,0 +1,4 @@
+---
+layout: none
+---
+{% for item in site.data.redirects %}{{ item.source }} {{ item.destination }} {{ item.type }}{% endfor %}
