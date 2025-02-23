@@ -1,8 +1,12 @@
-- shorturl: /nfc
+- shorturl: nfc
   source: nfc
   medium: nfcscan
   campaign: f2f
-- shorturl: /home
+- shorturl: home
   source: ejnet
   medium: ejnet
   campaign: webredir
+- shorturl: linkedin
+  source: linkedin
+  medium: social
+  campaign: linkedin
