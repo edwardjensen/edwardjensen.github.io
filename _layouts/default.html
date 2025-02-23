@@ -7,7 +7,7 @@
     {% if jekyll.environment == "production" %}
     {% assign homepage = site.homepage | where: "status", "live" | sort: 'order' %}
     {% else %}
-    {% assign homepage = site.homepage | sort: 'order' %}
+    {% assign homepage = site.homepage | where_exp: "homepage", "homepage.status != 'off'" | sort: 'order' %}
     {% endif %}
 
     {% for i in homepage %}

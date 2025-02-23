@@ -1,7 +1,7 @@
 ---
 order: 15
 section_title: "Recent public GitHub contributions"
-status: off
+status: draft
 ---
 
 {% assign github = site.data.github | where_exp: "gh", "gh.updated_at >= '2025-01-01'" | sort: "updated_at" | reverse %}
