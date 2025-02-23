@@ -1,4 +1,8 @@
 - shorturl: /nfc
   source: nfc
   medium: nfcscan
-  campaign: f2f 
+  campaign: f2f
+- shorturl: /home
+  source: ejnet
+  medium: ejnet
+  campaign: webredir 
