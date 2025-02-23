@@ -22,6 +22,7 @@ jobs:
           echo "build_id: ${{ github.run_id }}" >> ./_data/buildinfo.yml
           curl -o _data/ejnet.json https://www.edwardjensen.net/feed.json
           curl -o _data/github.json https://api.github.com/users/edwardjensen/repos
+          curl -o _data/microphotos.json https://micro.edwardjensen.net/photos/index.json
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:

@@ -13,5 +13,4 @@ yarn-error.log
 _site/
 
 # Development data
-_data/ejnet.json
-_data/github.json
+_data/*.json

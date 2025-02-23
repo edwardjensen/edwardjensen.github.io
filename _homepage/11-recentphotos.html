@@ -1,0 +1,12 @@
+---
+order: 11
+status: live
+section_title: Recent photography
+---
+{% assign photos = site.data.microphotos.items | sort: "date_published" | reverse %}
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+{% for i in photos | limit: 4 %}
+<div class="justify-items-center align-items-center"><img src="{{ i.image }}" class="rounded-sm md:rounded-lg"></div>
+{% endfor %}
+</div>
