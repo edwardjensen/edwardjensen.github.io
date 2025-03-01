@@ -1,4 +1,4 @@
-name: Publish landing page on push or nightly at 0900 UTC
+name: Publish landing page on push or nightly at 1730 UTC
 
 on:
   push:
