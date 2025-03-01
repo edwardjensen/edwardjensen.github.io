@@ -835,9 +835,6 @@
   .text-blue-600 {
     color: var(--color-blue-600);
   }
-  .text-gray-600 {
-    color: var(--color-gray-600);
-  }
   .text-white {
     color: var(--color-white);
   }
@@ -1069,6 +1066,27 @@
     @media (width >= 64rem) {
       border-radius: var(--radius-xl);
     }
+  }
+  .dark\:bg-gray-900 {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-gray-900);
+    }
+  }
+  .dark\:text-gray-200 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-gray-200);
+    }
+  }
+  .dark\:text-gray-300 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-gray-300);
+    }
+  }
+}
+.dark-mode {
+  color: var(--color-gray-900);
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-gray-50);
   }
 }
 @keyframes spin {
