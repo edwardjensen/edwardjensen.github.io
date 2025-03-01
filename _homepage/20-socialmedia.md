@@ -9,7 +9,7 @@ status: live
         {% for i in site.data.weblinks %}
         <li>
             <a href="{{ i.url }}">
-                <i class="bi bi-{{ i.icon }} text-blue-600 hover:text-blue-500"></i>
+                <i class="bi bi-{{ i.icon }} text-blue-600 dark:text-gray-300 hover:text-blue-500"></i>
             </a>
         </li>
         {% endfor %}

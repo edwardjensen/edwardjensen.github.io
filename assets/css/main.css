@@ -7,3 +7,7 @@
   --font-sans: 'basic-sans', 'sans-serif';
   --font-header: 'museo-slab', 'serif';
   }
+
+.dark-mode {
+  @apply text-gray-900 dark:text-gray-50;
+}

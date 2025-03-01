@@ -14,7 +14,7 @@ status: live
     <h3 class="text-2xl font-bold">
         <a href="{{ post.url }}" class="hover:text-gray-700 hover:underline">{{ post.title }}</a>
     </h3>
-    <p class="text-sm text-gray-600">{{ post.date_published | date: "%e %B %Y" }}</p>
+    <p class="text-sm dark-mode">{{ post.date_published | date: "%e %B %Y" }}</p>
     </div>
 </a>
 </div>
@@ -24,7 +24,7 @@ status: live
 <h3 class="text-xl italic">Also recently...</h3>
 <ul class="leading-5">
 {% for post in recent_posts %}
-<li><a href="{{ post.url }}" class="font-bold uppercase text-blue-600 hover:text-blue-500 hover:underline">{{ post.title }}</a>
-<span>{{ post.date_published | date: "%e %B %Y" }}</span>
+<li><a href="{{ post.url }}" class="font-bold uppercase text-blue-600 dark:text-gray-200 hover:text-blue-500 hover:underline">{{ post.title }}</a>
+<span class="dark:text-gray-300">{{ post.date_published | date: "%e %B %Y" }}</span>
 </li>
 {% endfor %}
