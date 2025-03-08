@@ -10,7 +10,8 @@
   "license": "ISC",
   "type": "commonjs",
   "description": "",
-  "devDependencies": {
+
+  "dependencies": {
     "@tailwindcss/postcss": "^4.0.7",
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.20",
