@@ -9,7 +9,7 @@ status: live
 {% for post in recent_posts %}
 <div class="py-3">
 <a href="{{ post.url }}">
-<img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-auto rounded-xl hover:blur-[1px] transition duration-300">
+<img src="{{ post.image }}" alt="{{ post.image_alt_text }}" class="w-full h-auto rounded-xl hover:blur-[1px] transition duration-300">
 <div class="flex flex-col items-center">
     <h3 class="text-2xl font-bold">
         <a href="{{ post.url }}" class="hover:text-gray-700 hover:underline">{{ post.title }}</a>

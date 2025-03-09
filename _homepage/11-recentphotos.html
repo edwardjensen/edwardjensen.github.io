@@ -12,10 +12,10 @@ section_title: Recent photography
     {% assign caption = caption_full | strip_html %}
     {% assign img_part = image.content_html | split: '<img' | last %}
     {% assign alt_part = img_part | split: 'alt="' | last %}
-    {% assign alt_text = alt_part | split: '">' | first %}
+    {% assign alt_text = alt_part | split: '">' | replace: '"', '&quot;' | first %}
     <a href="{{ image.url }}">
         <div class="justify-items-center align-items-center">
-            <img src="{{ image._microblog.thumbnail_url }}" title="{{ caption }}" alt="{{ alt_text }}" class="rounded shadow-md w-full max-h-60 md:max-h-120">
+            <img src="{{ image._microblog.thumbnail_url }}" title="{{ caption }}" alt="{{ alt_text }}" class="rounded shadow-md w-full max-h-60 md:max-h-120" alt="{{ alt_text }}">
         </div>
     </a>
 {% endfor %}
