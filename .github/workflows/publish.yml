@@ -37,8 +37,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '23.6.0'
-          cache: 'npm'
+          node-version: '22.x'
+          # cache: 'npm'
 
       - name: Install dependencies
         run: |
