@@ -1,0 +1,62 @@
+---
+// Component for displaying recent GitHub contributions
+interface GitHubRepo {
+  name: string;
+  description: string;
+  html_url: string;
+  updated_at: string;
+}
+
+// Filter repos updated since 2025-01-01 and sort by updated date
+function filterAndSortRepos(repos: GitHubRepo[]): GitHubRepo[] {
+  const cutoffDate = new Date('2025-01-01');
+  return repos
+    .filter(repo => new Date(repo.updated_at) >= cutoffDate)
+    .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
+    .slice(0, 5);
+}
+
+// Format date like Jekyll's date filter
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  const day = date.getDate();
+  const month = date.toLocaleDateString('en-US', { month: 'long' });
+  const year = date.getFullYear();
+  return `${day} ${month} ${year}`;
+}
+
+// Placeholder for GitHub data (would be fetched at build time)
+const githubRepos: GitHubRepo[] = [];
+
+// In production, you'd fetch this data:
+// const response = await fetch('https://api.github.com/users/edwardjensen/repos');
+// const repos = await response.json();
+// const recentRepos = filterAndSortRepos(repos);
+---
+
+<div class="space-y-4">
+  <h3 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Recent public GitHub contributions</h3>
+  
+  <ul class="space-y-3 mt-3 mb-3">
+    <!-- Placeholder for when GitHub data is available -->
+    <li class="text-center text-gray-600 dark:text-gray-400 py-4">
+      <p>Recent GitHub activity will appear here.</p>
+      <p class="text-sm mt-2">Connect to GitHub API at build time.</p>
+    </li>
+    
+    <!-- Template for when repos are loaded:
+    {recentRepos.map((repo) => (
+      <li class="leading-4">
+        <a href={repo.html_url} 
+           target="_blank" 
+           class="font-semibold hover:underline dark:text-gray-200 hover:text-blue-500">
+          {repo.name}
+        </a>
+        <span class="ml-2">{repo.description}</span>
+        <span class="italic ml-2">(last updated {formatDate(repo.updated_at)})</span>
+      </li>
+    ))}
+    -->
+  </ul>
+</div>
+

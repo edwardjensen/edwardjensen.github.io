@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BriefBio from '../components/BriefBio.astro';
+import Header from '../components/Header.astro';
+import RecentPosts from '../components/RecentPosts.astro';
+import RecentPhotos from '../components/RecentPhotos.astro';
+import RecentGitHub from '../components/RecentGitHub.astro';
+import Newsletter from '../components/Newsletter.astro';
+import SocialMedia from '../components/SocialMedia.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+
+// Get event from URL path or query parameter
+const { event } = Astro.params;
+const eventParam = event || Astro.url.searchParams.get('event') || 'direct';
+---
+
+<Layout title="Edward Jensen says hello">
+	<!-- Profile Image Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl">
+		<div class="m-2 text-center">
+			<BriefBio />
+		</div>
+	</div>
+
+	<!-- Header/Description Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<Header />
+		</div>
+	</div>
+
+	<!-- Recent Posts Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<RecentPosts />
+		</div>
+	</div>
+
+	<!-- Recent Photos Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<RecentPhotos />
+		</div>
+	</div>
+
+	<!-- Recent GitHub Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<RecentGitHub />
+		</div>
+	</div>
+
+	<!-- Newsletter Section (commented out as it was draft status in Jekyll) -->
+	<!-- 
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<Newsletter />
+		</div>
+	</div>
+	-->
+
+	<!-- Social Media Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<SocialMedia />
+		</div>
+	</div>
+
+	<!-- Contact Form Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<ContactForm event={eventParam} />
+		</div>
+	</div>
+
+	<!-- Footer Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl">
+		<div class="m-2 text-center">
+			<Footer />
+		</div>
+	</div>
+
+	<!-- Event tracking indicator (development only) -->
+	{eventParam !== 'direct' && (
+		<div class="text-center text-sm text-gray-500 mt-4">
+			Event: {eventParam}
+		</div>
+	)}
+</Layout>

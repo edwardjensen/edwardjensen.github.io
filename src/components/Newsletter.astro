@@ -1,0 +1,41 @@
+---
+// Component for newsletter signup
+---
+
+<div class="space-y-4">
+  <h3 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Sign up for my newsletter!</h3>
+  
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/edwardjensen"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.com/edwardjensen', 'popupwindow')"
+    class="embeddable-buttondown-form space-y-4"
+  >
+    <div class="flex flex-col space-y-2">
+      <label for="bd-email" class="text-sm font-medium text-gray-700 dark:text-gray-300">
+        Enter your email
+      </label>
+      <input 
+        type="email" 
+        name="email" 
+        id="bd-email" 
+        required
+        class="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 dark:placeholder-gray-400"
+        placeholder="your@email.com"
+      />
+    </div>
+    
+    <button 
+      type="submit" 
+      class="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors"
+    >
+      Subscribe
+    </button>
+    
+    <p class="italic text-sm text-center text-gray-600 dark:text-gray-400">
+      One email per month. No spam. Unsubscribe at any time.
+    </p>
+  </form>
+</div>
+

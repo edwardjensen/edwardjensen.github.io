@@ -1,10 +1,7 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"terminal.integrated.defaultProfile.osx": "zsh"
-	}
+    "folders": [
+        {
+            "path": "."
+        }
+    ]
 }

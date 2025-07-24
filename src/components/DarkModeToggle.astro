@@ -1,0 +1,59 @@
+---
+// Dark mode toggle component
+---
+
+<button 
+  id="dark-mode-toggle" 
+  class="fixed top-4 right-4 z-50 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+  title="Toggle dark mode"
+>
+  <i id="dark-mode-icon" class="bi bi-moon-fill text-xl"></i>
+</button>
+
+<script>
+  // Dark mode toggle functionality
+  const toggle = document.getElementById('dark-mode-toggle');
+  const icon = document.getElementById('dark-mode-icon');
+  const html = document.documentElement;
+
+  // Check for saved theme preference or default to system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  // Set initial theme
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    html.classList.add('dark');
+    if (icon) icon.className = 'bi bi-sun-fill text-xl';
+  } else {
+    html.classList.remove('dark');
+    if (icon) icon.className = 'bi bi-moon-fill text-xl';
+  }
+
+  // Toggle functionality
+  toggle?.addEventListener('click', () => {
+    const isDark = html.classList.contains('dark');
+    
+    if (isDark) {
+      html.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      if (icon) icon.className = 'bi bi-moon-fill text-xl';
+    } else {
+      html.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      if (icon) icon.className = 'bi bi-sun-fill text-xl';
+    }
+  });
+
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      if (e.matches) {
+        html.classList.add('dark');
+        if (icon) icon.className = 'bi bi-sun-fill text-xl';
+      } else {
+        html.classList.remove('dark');
+        if (icon) icon.className = 'bi bi-moon-fill text-xl';
+      }
+    }
+  });
+</script>

@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BriefBio from '../components/BriefBio.astro';
+import Header from '../components/Header.astro';
+import RecentPosts from '../components/RecentPosts.astro';
+import RecentPhotos from '../components/RecentPhotos.astro';
+import RecentGitHub from '../components/RecentGitHub.astro';
+import SocialMedia from '../components/SocialMedia.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+
+// Dynamic route for event-specific pages
+const { event } = Astro.params;
+
+// Optional: define allowed events or let any string work
+// const allowedEvents = ['conference', 'meetup', 'networking'];
+// if (!allowedEvents.includes(event)) {
+//   return Astro.redirect('/');
+// }
+---
+
+<Layout title={`Edward Jensen says hello - ${event}`}>
+	<!-- Profile Image Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl">
+		<div class="m-2 text-center">
+			<BriefBio />
+		</div>
+	</div>
+
+	<!-- Header/Description Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<Header />
+		</div>
+	</div>
+
+	<!-- Event-specific message -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-blue-50 dark:bg-blue-900">
+		<div class="m-2 text-center">
+			<p class="text-lg text-blue-900 dark:text-blue-100">Great meeting you at <strong>{event}</strong>!</p>
+		</div>
+	</div>
+
+	<!-- Recent Posts Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<RecentPosts />
+		</div>
+	</div>
+
+	<!-- Recent Photos Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<RecentPhotos />
+		</div>
+	</div>
+
+	<!-- Recent GitHub Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<RecentGitHub />
+		</div>
+	</div>
+
+	<!-- Social Media Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<SocialMedia />
+		</div>
+	</div>
+
+	<!-- Contact Form Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl border-solid border-2 w-11/12 lg:max-w-2xl bg-gray-50 dark:bg-gray-900">
+		<div class="m-2 text-center">
+			<ContactForm event={event} />
+		</div>
+	</div>
+
+	<!-- Footer Section -->
+	<div class="flex items-center justify-center mx-auto my-3 lg:my-5 rounded-md lg:rounded-xl">
+		<div class="m-2 text-center">
+			<Footer />
+		</div>
+	</div>
+</Layout>
