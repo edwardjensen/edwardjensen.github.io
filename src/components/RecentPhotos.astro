@@ -22,13 +22,18 @@ function extractImageData(content_html: string) {
   return { caption, alt_text };
 }
 
-// Placeholder for photos data (would be fetched at build time)
-const photos: Photo[] = [];
+// Fetch photos data
+let photos: Photo[] = [];
 
-// In production, you'd fetch this data:
-// const response = await fetch('https://micro.edwardjensen.net/photos/index.json');
-// const data = await response.json();
-// const photos = data.items.sort((a, b) => new Date(b.date_published).getTime() - new Date(a.date_published).getTime()).slice(0, 4);
+try {
+  const response = await fetch('https://micro.edwardjensen.net/photos/index.json');
+  const data = await response.json();
+  photos = data.items
+    .sort((a: Photo, b: Photo) => new Date(b.date_published).getTime() - new Date(a.date_published).getTime())
+    .slice(0, 4);
+} catch (error) {
+  console.error('Failed to fetch photos:', error);
+}
 ---
 
 <div class="space-y-4">
@@ -43,29 +48,26 @@ const photos: Photo[] = [];
   </p>
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <!-- Placeholder for when photo data is available -->
-    <div class="col-span-full text-center text-gray-600 dark:text-gray-400 py-8">
-      <p>Recent photos from micro.edwardjensen.net will appear here.</p>
-      <p class="text-sm mt-2">Connect to external feed at build time.</p>
-    </div>
-    
-    <!-- Template for when photos are loaded:
-    {photos.map((photo) => {
+    {photos.length > 0 ? photos.map((photo) => {
       const { caption, alt_text } = extractImageData(photo.content_html);
       return (
-        <a href={photo.url} class="block">
+        <a href={photo.url} target="_blank" class="block">
           <div class="flex justify-center items-center">
             <img 
               src={photo._microblog.thumbnail_url} 
               title={caption}
               alt={alt_text}
-              class="rounded shadow-md w-full max-h-60 md:max-h-120 object-cover hover:opacity-90 transition-opacity"
+              class="rounded shadow-md w-full max-h-60 object-cover hover:opacity-90 transition-opacity"
             />
           </div>
         </a>
       );
-    })}
-    -->
+    }) : (
+      <div class="col-span-full text-center text-gray-600 dark:text-gray-400 py-8">
+        <p>Recent photos from micro.edwardjensen.net will appear here.</p>
+        <p class="text-sm mt-2">Loading from external feed...</p>
+      </div>
+    )}
   </div>
 </div>
 

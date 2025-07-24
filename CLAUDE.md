@@ -43,9 +43,9 @@ npm run build
 ### Content Sections (Astro Components)
 - `BriefBio.astro`: Profile image section
 - `Header.astro`: Site description  
-- `RecentPosts.astro`: Blog posts from edwardjensen.net (placeholder for external data)
-- `RecentPhotos.astro`: Photos from micro.edwardjensen.net (placeholder for external data)
-- `RecentGitHub.astro`: GitHub repository activity (placeholder for external data)
+- `RecentPosts.astro`: Blog posts from https://www.edwardjensen.net/feed.json
+- `RecentPhotos.astro`: Photos from https://micro.edwardjensen.net/photos/index.json
+- `RecentGitHub.astro`: GitHub repository activity from https://api.github.com/users/edwardjensen/repos
 - `SocialMedia.astro`: Social media links with Bootstrap icons
 - `ContactForm.astro`: Contact collection form with event tracking
 - `Newsletter.astro`: Email newsletter signup (currently commented out)
